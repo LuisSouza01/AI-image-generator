@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
-
 import { Card, FormField, Loader } from '../components';
+
+interface ResultType {
+  data: PostProps[];
+}
 
 export interface PostProps {
   _id: string;
@@ -40,9 +43,7 @@ const Home = () => {
         });
 
         if (response.ok) {
-          const result = await response.json();
-
-          console.log(result);
+          const result: ResultType = await response.json();
 
           setAllPosts(result.data.reverse());
         }        

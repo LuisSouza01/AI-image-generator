@@ -1,11 +1,16 @@
-import express, { Request, Response } from 'express';
 import * as dotenv from 'dotenv';
 import { v2 as cloudinary } from 'cloudinary';
+import express, { Request, Response } from 'express';
 
 import Post from '../mongodb/models/post';
 
-dotenv.config();
+interface BodyProps {
+  name: string;
+  prompt: string;
+  photo: string;
+}
 
+dotenv.config();
 const router = express.Router();
 
 cloudinary.config({
@@ -26,7 +31,7 @@ router.get('/', async (req: Request, res: Response) => {
 
 router.post('/', async (req: Request, res: Response) => {
   try {
-    const { name, prompt, photo } = req.body;
+    const { name, prompt, photo }: BodyProps = req.body;
 
     const photoUrl = await cloudinary.uploader.upload(photo);
 

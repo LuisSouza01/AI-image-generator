@@ -12,13 +12,9 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-router.get("/",(req: Request, res: Response) => {
-  res.send('HELLO FROM MUMBAI');
-});
-
 router.post("/", async (req: Request, res: Response) => {
   try {
-    const { prompt } = req.body;
+    const { prompt }: { prompt: string } = req.body;
 
     const aiResponse = await openai.createImage({
       prompt,
