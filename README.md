@@ -14,13 +14,17 @@ Supports a wide range of image styles and themes
 ## 🚀 Technologies
 The project is built using the MERN (MongoDB, Express.js, React, and Node.js) stack.
 
-- MongoDB
-- Node.js
-- Express.js
+#### Frontend (Client): 
 - React
 - react-router-dom
 - Tailwind
 - Vite
+- Typescript
+
+#### Backend (Server): 
+- MongoDB
+- Node.js
+- Express.js
 - Typescript
 - Cloudinary
 - OpenAI
@@ -81,3 +85,6 @@ Once both the client and server are running, you can use the AI Image Generator 
 ## 📝 Usage
 Visit http://127.0.0.1:5173/ in your browser. <br/>
 Submit a textual description and view the generated image.
+
+#
+Desenvolvido com 💜 por Luis Souza 🧑🏽‍🚀
